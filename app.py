@@ -196,10 +196,17 @@ elif selected_page == "📊 Resume Ranking":
                     st.warning(f"⚠️ {resume_file.name}: {ai_payload['error']}")
                     continue
 
+                score = ai_payload.get("score", 0)
+                if isinstance(score, str):
+                    try:
+                        score = float(score)
+                    except (TypeError, ValueError):
+                        score = 0
+
                 ai_rankings.append(
                     {
                         "name": resume_file.name,
-                        "score": ai_payload.get("score", 0),
+                        "score": score,
                         "strengths": ai_payload.get("strengths", []),
                         "gaps": ai_payload.get("gaps", []),
                     }
