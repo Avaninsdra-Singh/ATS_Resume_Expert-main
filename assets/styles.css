@@ -1,0 +1,8 @@
+/* Add Streamlit UI overrides */
+h1, h2, h3 {
+    color: #004aad;
+}
+.stButton > button {
+    background-color: #004aad;
+    color: white;
+}
