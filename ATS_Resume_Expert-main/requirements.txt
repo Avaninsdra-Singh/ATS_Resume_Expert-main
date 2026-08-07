@@ -4,3 +4,4 @@ nltk
 openai
 fpdf
 python-dotenv
+google-generativeai
